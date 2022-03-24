@@ -49,10 +49,10 @@ public class Main extends Application {
 		CheckBox toggleMayo = new CheckBox("Mayo");
 		CheckBox togglePickles = new CheckBox("Pickles");			// GUI interactions
 		RadioButton breadType1 = new RadioButton("Wheat");
-        RadioButton breadType2 = new RadioButton("Foccacia");
-        RadioButton breadType3 = new RadioButton("Sourdough");
-        ToggleGroup radioGroup = new ToggleGroup();
-        Button checkout = new Button("Go to Checkout");
+      	  	RadioButton breadType2 = new RadioButton("Foccacia");
+       		RadioButton breadType3 = new RadioButton("Sourdough");
+       		ToggleGroup radioGroup = new ToggleGroup();
+       		Button checkout = new Button("Go to Checkout");
 		Button addSand = new Button("Add Sandwich");
 		Text total = new Text();
 		
@@ -67,10 +67,10 @@ public class Main extends Application {
 		
 		TableView tableView = new TableView();
 		TableColumn<String, Sandwich> column1 = new TableColumn<>("Sandwich");
-	    column1.setCellValueFactory(new PropertyValueFactory<>("nameAndIngredients"));
-	    TableColumn<String, Sandwich> column2 = new TableColumn<>("Price");					// Table for summary
-	    column2.setCellValueFactory(new PropertyValueFactory<>("strPrice"));
-	    tableView.getColumns().add(column1);
+	    	column1.setCellValueFactory(new PropertyValueFactory<>("nameAndIngredients"));
+	    	TableColumn<String, Sandwich> column2 = new TableColumn<>("Price");					// Table for summary
+	   	column2.setCellValueFactory(new PropertyValueFactory<>("strPrice"));
+	   	tableView.getColumns().add(column1);
 		tableView.getColumns().add(column2);
 		
 		primaryStage.setTitle("Valencia Sandwich Shop");
@@ -109,15 +109,15 @@ public class Main extends Application {
 		ingriVert.getChildren().add(toggleMayo);
 		ingriVert.getChildren().add(togglePickles);
         
-        breadType1.setToggleGroup(radioGroup);
-        breadType2.setToggleGroup(radioGroup);
-        breadType3.setToggleGroup(radioGroup);
-        breadType1.setUserData("Wheat");					// Bread toggle
-        breadType2.setUserData("Foccacia");
-        breadType3.setUserData("Sourdough");
-        VBox breadVert = new VBox(breadType1, breadType2, breadType3);
-        menuHorz.getChildren().add(breadLabel);
-        menuHorz.getChildren().add(breadVert);
+		breadType1.setToggleGroup(radioGroup);
+		breadType2.setToggleGroup(radioGroup);
+		breadType3.setToggleGroup(radioGroup);
+		breadType1.setUserData("Wheat");					// Bread toggle
+		breadType2.setUserData("Foccacia");
+		breadType3.setUserData("Sourdough");
+		VBox breadVert = new VBox(breadType1, breadType2, breadType3);
+		menuHorz.getChildren().add(breadLabel);
+		menuHorz.getChildren().add(breadVert);
 		funcHorz.getChildren().add(addSand);
 		
 		addSand.setOnAction(actionEvent ->  {
@@ -131,7 +131,7 @@ public class Main extends Application {
 				boolean hasMayo = toggleMayo.isSelected();
 				boolean hasPickles= togglePickles.isSelected();
 				Sandwich sand1 = new Sandwich(selectedIndex, breadSelected, hasLettuce, 
-									hasTomato, hasBacon, hasMustard, hasMayo, hasPickles);
+								hasTomato, hasBacon, hasMustard, hasMayo, hasPickles);
 				orderList.add(sand1);
 			}
 		});
@@ -158,7 +158,6 @@ public class Main extends Application {
 		totalHorz.getChildren().add(totalLabel);
 		total.setFont(new Font(20));
 		totalHorz.getChildren().add(total);
-		
 	}
 	
 	public static void main(String[] args) {
